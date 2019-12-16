@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+#  node-app:
+#    build: ./artifacts/gate-simulator
+#    image: node:latest
+#    container_name: node
+#    ports:
+#      - '9999:9999'
+  postgres:
+    image: postgres:latest
+    container_name: postgres-qa-diploma-z88m
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/pgdata
+    environment:
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=app
+      - POSTGRES_DB=app

@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "4.1.3"
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+// кодировка файлов (если используете русский язык в файлах)
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+allure {
+    autoconfigure = true
+    version = '2.13.0' // Latest Allure Version
+    useJUnit5 {
+        version = '2.13.0' // Latest Allure Version
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+    testImplementation 'com.codeborne:selenide:5.5.1'
+    testImplementation 'mysql:mysql-connector-java:8.0.18'
+    testImplementation 'postgresql:postgresql:9.0-801.jdbc4'
+    testImplementation 'com.github.javafaker:javafaker:0.15'
+    testImplementation 'io.rest-assured:rest-assured:4.1.2'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.0'
+}
+
+test {
+    useJUnitPlatform()
+    // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+}

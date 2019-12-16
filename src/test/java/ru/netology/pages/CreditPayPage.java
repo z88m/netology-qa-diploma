@@ -21,7 +21,7 @@ public class CreditPayPage extends ProductPage {
 
     public static CreditPayPage selectCreditPayPage(Card card) {
         ProductPage productPage = new ProductPage();
-        CreditPayPage creditPayPage = productPage.creditPayPage();
+        CreditPayPage creditPayPage = productPage.creditPayButtonClick();
         creditPayPage.inputData(card);
         creditPayPage.continueButtonClick();
         return creditPayPage;

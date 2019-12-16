@@ -56,7 +56,7 @@ public class ProductPage {
         return payPage;
     }
 
-    public CreditPayPage creditPayPage() {
+    public CreditPayPage creditPayButtonClick() {
         CreditPayPage creditPayPage = page(CreditPayPage.class);
         creditPayPage.creditButton.click();
         return creditPayPage;

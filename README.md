@@ -2,7 +2,7 @@
 
 #### Подготовка и запуск теста
 1. Клонировать репозиторий
-    * ```docker clone https://github.com/z88m/netology-qa-diploma.git```
+    * ```git clone https://github.com/z88m/netology-qa-diploma.git```
 
 1. Перейти в каталог со скачанным содержимым репозитория и скачать докер-контейнеры
     * ```cd ./netology-qa-diploma/```

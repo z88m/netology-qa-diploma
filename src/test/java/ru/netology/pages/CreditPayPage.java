@@ -2,7 +2,8 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import lombok.Getter;
-import ru.netology.testUtils.Card;
+import ru.netology.testUtils.Cards;
+
 
 @Getter
 public class CreditPayPage extends ProductPage {
@@ -19,7 +20,7 @@ public class CreditPayPage extends ProductPage {
         notificationApproved.waitUntil(Condition.not(Condition.visible), 10000);
     }
 
-    public static CreditPayPage selectCreditPayPage(Card card) {
+    public static CreditPayPage selectCreditPayPage(Cards card) {
         ProductPage productPage = new ProductPage();
         CreditPayPage creditPayPage = productPage.creditPayButtonClick();
         creditPayPage.inputData(card);

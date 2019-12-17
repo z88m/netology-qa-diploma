@@ -2,7 +2,7 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import lombok.Getter;
-import ru.netology.testUtils.Card;
+import ru.netology.testUtils.Cards;
 
 @Getter
 public class PayPage extends ProductPage {
@@ -19,7 +19,7 @@ public class PayPage extends ProductPage {
         notificationApproved.waitUntil(Condition.not(Condition.visible), 10000);
     }
 
-    public static PayPage selectPayPage(Card card) {
+    public static PayPage selectPayPage(Cards card) {
         ProductPage productPage = new ProductPage();
         PayPage payPage = productPage.payButtonClick();
         payPage.inputData(card);

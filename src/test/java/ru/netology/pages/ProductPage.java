@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import org.openqa.selenium.By;
-import ru.netology.testUtils.Card;
+import ru.netology.testUtils.Cards;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -42,7 +42,7 @@ public class ProductPage {
         header.shouldBe(Condition.visible);
     }
 
-    public void inputData(Card card) {
+    public void inputData(Cards card) {
         cardNumberField.$(".input__control").setValue(card.getNumber());
         monthField.$(".input__control").setValue(card.getMonth());
         yearField.$(".input__control").setValue(card.getYear());

@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class DataGenerator {
+public class TestDataGenerator {
 
     public static String approvedCardNumber() {
         return "4444444444444441";

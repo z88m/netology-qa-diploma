@@ -2,7 +2,7 @@ package ru.netology.testUtils;
 
 import java.sql.*;
 
-public class SQLHelper {
+public class TestSQLHelper {
 
     private static final String dbUrl = "jdbc:mysql://localhost:3306/app";
     private static final String dbUser = "app";
@@ -21,7 +21,7 @@ public class SQLHelper {
     }
 
 
-    public static String getOperationStatus(String table) throws SQLException {
+    public static String getOperationStatus(String table) {
         String status = "";
         try {
             Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);

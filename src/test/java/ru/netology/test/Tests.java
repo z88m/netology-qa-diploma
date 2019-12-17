@@ -5,9 +5,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.netology.pages.CreditPayPage;
 import ru.netology.pages.PayPage;
-import ru.netology.testUtils.Card;
-import ru.netology.testUtils.DataGenerator;
-import ru.netology.testUtils.SQLHelper;
+import ru.netology.testUtils.Cards;
+import ru.netology.testUtils.TestDataGenerator;
+import ru.netology.testUtils.TestSQLHelper;
 
 import java.sql.SQLException;
 
@@ -15,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Tests {
 
-    private Card approvedCard = new Card();
-    private Card declinedCard = new Card();
+    private Cards approvedCard = new Cards();
+    private Cards declinedCard = new Cards();
 
     @BeforeAll
     static void setUpAll() {
@@ -30,22 +30,22 @@ public class Tests {
 
     @BeforeEach
     void setup() {
-        approvedCard.setNumber(DataGenerator.approvedCardNumber());
-        approvedCard.setMonth(DataGenerator.month());
-        approvedCard.setYear(DataGenerator.currentYearPlusOrMinus(2));
-        approvedCard.setCardholder(DataGenerator.cardholder());
-        approvedCard.setCvc(DataGenerator.cvc());
+        approvedCard.setNumber(TestDataGenerator.approvedCardNumber());
+        approvedCard.setMonth(TestDataGenerator.month());
+        approvedCard.setYear(TestDataGenerator.currentYearPlusOrMinus(2));
+        approvedCard.setCardholder(TestDataGenerator.cardholder());
+        approvedCard.setCvc(TestDataGenerator.cvc());
 
-        declinedCard.setNumber(DataGenerator.declinedCardNumber());
-        declinedCard.setMonth(DataGenerator.month());
-        declinedCard.setYear(DataGenerator.currentYearPlusOrMinus(2));
-        declinedCard.setCardholder(DataGenerator.cardholder());
-        declinedCard.setCvc(DataGenerator.cvc());
+        declinedCard.setNumber(TestDataGenerator.declinedCardNumber());
+        declinedCard.setMonth(TestDataGenerator.month());
+        declinedCard.setYear(TestDataGenerator.currentYearPlusOrMinus(2));
+        declinedCard.setCardholder(TestDataGenerator.cardholder());
+        declinedCard.setCvc(TestDataGenerator.cvc());
     }
 
     @AfterEach
     void cleanTables() throws SQLException {
-        SQLHelper.cleanTables();
+        TestSQLHelper.cleanTables();
     }
 
     @Test
@@ -53,7 +53,7 @@ public class Tests {
     void shouldConfirmPayWithApprovedCard() throws SQLException {
         PayPage payPage = PayPage.selectPayPage(approvedCard);
         payPage.checkOperationApproved();
-        assertEquals("APPROVED", SQLHelper.getOperationStatus(payPage.getDbTable()));
+        assertEquals("APPROVED", TestSQLHelper.getOperationStatus(payPage.getDbTable()));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class Tests {
     void shouldConfirmCreditPayWithApprovedCard() throws SQLException {
         CreditPayPage creditPayPage = CreditPayPage.selectCreditPayPage(approvedCard);
         creditPayPage.checkOperationApproved();
-        assertEquals("APPROVED", SQLHelper.getOperationStatus(creditPayPage.getDbTable()));
+        assertEquals("APPROVED", TestSQLHelper.getOperationStatus(creditPayPage.getDbTable()));
     }
 
    @Test
@@ -69,7 +69,7 @@ public class Tests {
     void shouldNotConfirmPayWithDeclinedCard() throws SQLException {
         PayPage payPage = PayPage.selectPayPage(declinedCard);
         payPage.checkOperationDeclined();
-        assertEquals("DECLINED", SQLHelper.getOperationStatus(payPage.getDbTable()));
+        assertEquals("DECLINED", TestSQLHelper.getOperationStatus(payPage.getDbTable()));
     }
 
     @Test
@@ -77,6 +77,6 @@ public class Tests {
     void shouldNotConfirmCreditPayWithDeclinedCard() throws SQLException {
         CreditPayPage creditPayPage = CreditPayPage.selectCreditPayPage(declinedCard);
         creditPayPage.checkOperationDeclined();
-        assertEquals("DECLINED", SQLHelper.getOperationStatus(creditPayPage.getDbTable()));
+        assertEquals("DECLINED", TestSQLHelper.getOperationStatus(creditPayPage.getDbTable()));
     }
 }

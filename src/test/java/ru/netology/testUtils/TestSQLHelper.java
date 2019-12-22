@@ -4,7 +4,9 @@ import java.sql.*;
 
 public class TestSQLHelper {
 
-    private static final String dbUrl = "jdbc:mysql://localhost:3306/app";
+    //private static final String dbUrl = System.getProperty("db.url"); //для запуска из консоли
+    //private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/app"; //для запуска из Idea
+    private static final String dbUrl = "jdbc:postgres://127.0.0.1:5432/app"; //для запуска из Idea
     private static final String dbUser = "app";
     private static final String dbPass = "pass";
 
@@ -37,5 +39,4 @@ public class TestSQLHelper {
         }
         return status;
     }
-
 }

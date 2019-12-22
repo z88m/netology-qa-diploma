@@ -2,7 +2,6 @@ package ru.netology.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
 import org.openqa.selenium.By;
 import ru.netology.testUtils.Cards;
 
@@ -10,34 +9,22 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class ProductPage {
+public class StartPage {
 
-    @Getter
     protected String host = "http://localhost:8080";
-    @Getter
     protected SelenideElement header = $(By.cssSelector("h3"));
-    @Getter
     protected SelenideElement payButton = $(byText("Купить")).parent().parent();
-    @Getter
     protected SelenideElement creditButton = $(byText("Купить в кредит")).parent().parent();
-    @Getter
     protected SelenideElement continueButton = $(byText("Продолжить")).parent().parent();
-    @Getter
     protected SelenideElement cardNumberField = $(byText("Номер карты")).parent();
-    @Getter
     protected SelenideElement monthField = $(byText("Месяц")).parent();
-    @Getter
     protected SelenideElement yearField = $(byText("Год")).parent();
-    @Getter
     protected SelenideElement ownerField = $(byText("Владелец")).parent();
-    @Getter
     protected SelenideElement cvcField = $(byText("CVC/CVV")).parent();
-    @Getter
     protected SelenideElement notificationApproved = $(".notification_status_ok ");
-    @Getter
     protected SelenideElement notificationDeclined = $(".notification_status_error");
 
-    public ProductPage() {
+    public StartPage() {
         open(host);
         header.shouldBe(Condition.visible);
     }
@@ -50,13 +37,13 @@ public class ProductPage {
         cvcField.$(".input__control").setValue(card.getCvc());
     }
 
-    public PayPage payButtonClick() {
+    public static PayPage payButtonClick() {
         PayPage payPage = page(PayPage.class);
         payPage.payButton.click();
         return payPage;
     }
 
-    public CreditPayPage creditPayButtonClick() {
+    public static CreditPayPage creditPayButtonClick() {
         CreditPayPage creditPayPage = page(CreditPayPage.class);
         creditPayPage.creditButton.click();
         return creditPayPage;
@@ -65,5 +52,21 @@ public class ProductPage {
     public void continueButtonClick() {
         continueButton.click();
     }
+
+    /*public PayPage selectPayPage(Cards card) {
+        StartPage startPage = new StartPage();
+        PayPage payPage = startPage.payButtonClick();
+        payPage.inputData(card);
+        payPage.continueButtonClick();
+        return payPage;
+    }
+
+    public CreditPayPage selectCreditPayPage(Cards card) {
+        StartPage startPage = new StartPage();
+        CreditPayPage creditPayPage = startPage.creditPayButtonClick();
+        creditPayPage.inputData(card);
+        creditPayPage.continueButtonClick();
+        return creditPayPage;
+    }*/
 
 }

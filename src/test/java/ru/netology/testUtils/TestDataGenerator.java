@@ -1,7 +1,6 @@
 package ru.netology.testUtils;
 
 import com.github.javafaker.Faker;
-import lombok.val;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -20,7 +19,7 @@ public class TestDataGenerator {
         Cards approvedCard = new Cards();
         approvedCard.setNumber(approvedCardNumber());
         approvedCard.setMonth(generateMonth());
-        approvedCard.setYear(getShiftedYearFromCurrent(2));
+        approvedCard.setYear(getShiftedYYFromCurrent(2));
         approvedCard.setCardholder(generateCardholder());
         approvedCard.setCvc(generateCvc());
         return approvedCard;
@@ -30,7 +29,7 @@ public class TestDataGenerator {
         Cards declinedCard = new Cards();
         declinedCard.setNumber(declinedCardNumber());
         declinedCard.setMonth(generateMonth());
-        declinedCard.setYear(getShiftedYearFromCurrent(2));
+        declinedCard.setYear(getShiftedYYFromCurrent(2));
         declinedCard.setCardholder(generateCardholder());
         declinedCard.setCvc(generateCvc());
         return declinedCard;
@@ -41,8 +40,18 @@ public class TestDataGenerator {
         return String.format("%02d", (random.nextInt(12) + 1));
     }
 
-    public static String getShiftedYearFromCurrent(int shiftingYear) {
-        LocalDate date = LocalDate.now().plusDays(shiftingYear);
+    public static String getShiftedMMFromCurrent(int shiftingMonths) {
+        LocalDate date = LocalDate.now().plusMonths(shiftingMonths);
+        return String.format("%02d", date.getMonthValue());
+    }
+
+    public static String getShiftedYYFromCurrentByMonth(int shiftingMonths) {
+        LocalDate date = LocalDate.now().plusMonths(shiftingMonths);
+        return String.format("%02d", date.getYear());
+    }
+
+    public static String getShiftedYYFromCurrent(int shiftingYear) {
+        LocalDate date = LocalDate.now().plusYears(shiftingYear-2000);
         return String.format("%02d", date.getYear());
     }
 

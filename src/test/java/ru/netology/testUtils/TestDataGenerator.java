@@ -47,6 +47,7 @@ public class TestDataGenerator {
 
     public static String getShiftedYYFromCurrentByMonth(int shiftingMonths) {
         LocalDate date = LocalDate.now().plusMonths(shiftingMonths);
+        date = date.minusYears(2000);
         return String.format("%02d", date.getYear());
     }
 

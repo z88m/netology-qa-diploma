@@ -119,6 +119,14 @@ public class StartPage {
         monthField.$(".input__sub").shouldNotHave(Condition.exactText("Неверно указан срок действия карты"));
     }
 
+    public void checkYearErrorHave() {
+        yearField.$(".input__sub").shouldHave(Condition.exactText("Неверно указан срок действия карты"));
+    }
+
+    public void checkDateErrorHave() {
+        $(".input__sub").shouldHave(Condition.exactText("Истёк срок действия карты"));
+    }
+
     public void checkYearFormatErrorHave() {
         yearField.$(".input__sub").shouldHave(Condition.exactText("Неверный формат"));
     }
@@ -133,6 +141,14 @@ public class StartPage {
 
     public void checkOwnerErrorNotHave() {
         ownerField.$(".input__sub").shouldNotHave(Condition.exactText("Поле обязательно для заполнения"));
+    }
+
+    public void checkOwnerFormatErrorHave() {
+        ownerField.$(".input__sub").shouldHave(Condition.exactText("Неверный формат"));
+    }
+
+    public void checkOwnerFormatErrorNotHave() {
+        ownerField.$(".input__sub").shouldNotHave(Condition.exactText("Неверный формат"));
     }
 
     public void checkCvcErrorHave() {

@@ -362,7 +362,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkDateErrorHave();
     }
 
     @Test
@@ -371,12 +371,12 @@ public class Tests {
         PayPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
-        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrentByMonth(-1));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(-1));
         page.continueButtonClick();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkDateErrorHave();
     }
 
     @Test
@@ -385,7 +385,7 @@ public class Tests {
         CreditPayPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
-        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrentByMonth(-1));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(-1));
         page.continueButtonClick();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
@@ -399,12 +399,12 @@ public class Tests {
         PayPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
-        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrentByMonth(6));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(6));
         page.continueButtonClick();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkYearErrorHave();
     }
 
     @Test
@@ -413,12 +413,12 @@ public class Tests {
         CreditPayPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
-        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrentByMonth(6));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(6));
         page.continueButtonClick();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkYearErrorHave();
     }
 
     @Test
@@ -428,14 +428,14 @@ public class Tests {
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
         page.continueButtonClick();
-        page.checkMonthFormatErrorHave();
+        page.checkMonthDateErrorHave();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
         page.cleanMonthAndInputNewData("12");
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
-        page.checkMonthFormatErrorNotHave();
+        page.checkMonthDateErrorNotHave();
         assertEquals("APPROVED", TestSQLHelper.getOperationStatus(page.getDbTable()));
     }
 
@@ -446,14 +446,14 @@ public class Tests {
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
         page.continueButtonClick();
-        page.checkMonthFormatErrorHave();
+        page.checkMonthDateErrorHave();
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
         page.cleanMonthAndInputNewData("12");
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
-        page.checkMonthFormatErrorNotHave();
+        page.checkMonthDateErrorNotHave();
         assertEquals("APPROVED", TestSQLHelper.getOperationStatus(page.getDbTable()));
     }
 
@@ -468,7 +468,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(2));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(2));
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
         page.checkYearFormatErrorNotHave();
@@ -486,7 +486,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(2));
+        page.cleanYearAndInputNewData(TestDataGenerator.getShiftedYYFromCurrent(2));
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
         page.checkYearFormatErrorNotHave();
@@ -529,7 +529,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorHave();
+        page.checkOwnerFormatErrorHave();
     }
 
     @Test
@@ -542,7 +542,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorHave();
+        page.checkOwnerFormatErrorHave();
     }
 
     @Test
@@ -555,12 +555,12 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorHave();
+        page.checkOwnerFormatErrorHave();
         page.cleanOwnerAndInputNewData(TestDataGenerator.generateCardholder());
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
         assertEquals("APPROVED", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorNotHave();
+        page.checkOwnerFormatErrorNotHave();
     }
 
     @Test
@@ -573,12 +573,12 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorHave();
+        page.checkOwnerFormatErrorHave();
         page.cleanOwnerAndInputNewData(TestDataGenerator.generateCardholder());
         page.continueButtonClick();
         page.checkNotificationApprovedVisible();
         assertEquals("APPROVED", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkOwnerErrorNotHave();
+        page.checkOwnerFormatErrorNotHave();
     }
 
     @Test

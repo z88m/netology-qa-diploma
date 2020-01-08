@@ -1,5 +1,12 @@
 ## Дипломная работа AQA
 
+### Документация
+[План автоматизации](https://github.com/z88m/netology-qa-diploma/blob/master/docs/Plan.md)
+
+[Отчёт по итогам тестирования](https://github.com/z88m/netology-qa-diploma/blob/master/docs/Report.md)
+
+[Отчет по итогам автоматизации](https://github.com/z88m/netology-qa-diploma/blob/master/docs/Summary.md)
+
 #### Подготовка и запуск теста
 1. Клонировать репозиторий
     * ```git clone https://github.com/z88m/netology-qa-diploma.git```
@@ -8,17 +15,19 @@
     * ```cd ./netology-qa-diploma/```
     * ```docker pull mysql``` 
     * ```docker pull postgres``` 
-    * ~~docker pull node~~ - заменён на локальный node.js
-1. Запуск версии с поддержкой MySQL
-    * ```docker-compose -f docker-compose-mysql.yml up -d``` 
-1. **ИЛИ** Запуск версии с поддержкой Postgres
-    * ```docker-compose -f docker-compose-postgres.yml up -d``` 
-1. Перейти в каталог с эмулятором биллинга и запустить его
-    * ```cd ./artifacts/gate-simulator```
-    * ```npm start```
-1. Открыть новый терминал, перейти в каталог с тестируемым приложением и запустить его
-    * ```cd ./netology-qa-diploma/artifacts```
-    * ```java -jar aqa-shop.jar```
-1.  Открыть новый терминал, перейти в каталог репозитория и запустить тест
-    * ```cd ./netology-qa-diploma/```
-    * ```gradlew test``` *(или через **IntelliJ IDEA**)*
+    * ```docker pull node```
+1. Запуск контейнеров Docker и эмулятора биллинга
+    * ```docker-compose up -d --build```
+1. Запуск SUT с поддержкой MySQL
+   * ```java -Dspring.datasource.url=jdbc:mysql://127.0.0.1:3306/app -jar artifacts/aqa-shop.jar```
+1. **ИЛИ** Запуск SUT с поддержкой Postgres
+   * ```java -Dspring.datasource.url=jdbc:postgresql://127.0.0.1:5432/app -jar artifacts/aqa-shop.jar```
+1. Запуск тестов с MySQL
+   * ```gradlew -Ddb.url=jdbc:mysql://127.0.0.1:3306/app clean test allureReport```
+1. **ИЛИ** Запуск тестов с Postgres
+   * ```gradlew -Ddb.url=jdbc:postgresql://127.0.0.1:5432/app clean test allureReport```
+
+Для запуска тестов из **Idea** требуется исправить адрес базы данных в файле *TestSQLHelper.java*
+
+#### Отчёт Allure
+Отчёт по тестам генерируется командой ```gradlew allureServe```

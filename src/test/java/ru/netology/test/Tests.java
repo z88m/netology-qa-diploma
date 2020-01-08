@@ -119,7 +119,7 @@ public class Tests {
     }
 
     @Test
-    @DisplayName("9. Оплата проходит после исправления номера карты на валидный")
+    @DisplayName("9. Купить. Оплата проходит после исправления номера карты на валидный")
     void shouldPayProcessAfterRetypeNumCard() throws SQLException {
         PayPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
@@ -348,7 +348,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkDateErrorHave();
     }
 
     @Test
@@ -390,7 +390,7 @@ public class Tests {
         page.checkNotificationDeclinedNotVisible();
         page.checkNotificationApprovedNotVisible();
         assertEquals("", TestSQLHelper.getOperationStatus(page.getDbTable()));
-        page.checkMonthDateErrorHave();
+        page.checkDateErrorHave();
     }
 
     @Test

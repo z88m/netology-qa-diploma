@@ -13,12 +13,8 @@ _(Если ваша система по какой-то причине не во
 
 1. Клонировать репозиторий
     * ```git clone https://github.com/z88m/netology-qa-diploma.git```
-
 1. Перейти в каталог со скачанным содержимым репозитория и скачать докер-контейнеры
     * ```cd ./netology-qa-diploma/```
-    * ```docker pull mysql``` 
-    * ```docker pull postgres``` 
-    * ```docker pull node```
 1. Запуск контейнеров Docker и эмулятора биллинга
     * ```docker-compose up -d --build```
 1. Запуск SUT с поддержкой MySQL

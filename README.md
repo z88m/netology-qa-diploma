@@ -8,6 +8,9 @@
 [Отчет по итогам автоматизации](https://github.com/z88m/netology-qa-diploma/blob/master/docs/Summary.md)
 
 #### Подготовка и запуск теста
+
+_(Если ваша система по какой-то причине не воспринимает адрес 127.0.0.1, то замените его в команде на алиас '__localhost__')_
+
 1. Клонировать репозиторий
     * ```git clone https://github.com/z88m/netology-qa-diploma.git```
 

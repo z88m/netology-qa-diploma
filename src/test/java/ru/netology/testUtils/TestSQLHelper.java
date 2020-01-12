@@ -1,5 +1,7 @@
 package ru.netology.testUtils;
 
+import lombok.Getter;
+
 import java.sql.*;
 
 public class TestSQLHelper {
@@ -9,6 +11,8 @@ public class TestSQLHelper {
     //private static final String dbUrl = "jdbc:postgresql://127.0.0.1:5432/app"; //для запуска из Idea
     private static final String dbUser = "app";
     private static final String dbPass = "pass";
+    @Getter private static final String payTable = "app.payment_entity";
+    @Getter private static final String creditTable = "app.credit_request_entity";
 
     public static void cleanTables() throws SQLException {
         String cleanCreditTables = "DELETE FROM app.credit_request_entity;";

@@ -18,10 +18,10 @@
 
 #### Количество тест-кейсов
 
-Создано 46 тест-кейсов.
-Пройдено успешно: 32
-Тестов не пройдено: 14
-![Отчет](https://downloader.disk.yandex.ru/preview/a32fd07e63696c13b1957cae08b4ae297bfadbc2433b71e19d230c9742e6909e/5e162332/OxhM3pAPGCWKxayMQDKzPxfhu8pa8utHrdzTuDOY7rU8O-aPfvZRFzcPMNuDR-SGoUeViqu7-s_9XmUjTM_SwQ==?uid=0&filename=2020-01-08_17-44-20.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&owner_uid=17445&size=1640x909)
+Создано 36 тест-кейсов:
+* Пройдено успешно: 23
+* Тестов не пройдено: 13
+![Отчет](https://downloader.disk.yandex.ru/preview/494da8f4bdcadcadb0d855e61b21657e52b2fbf835f78013d59a0dcccce4567e/5e1b64b9/41wdvxvw4EeyUloJsk0naliVz3xJiU-8PiqLdT9vomNDxx3EfqEcB5yqlwXbEIuGe_Llo-Jq7dQ-wz39MWZBfw==?uid=0&filename=2020-01-12_17-25-13.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&owner_uid=17445&size=2048x2048)
 
 #### Общие рекомендации
 

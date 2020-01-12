@@ -63,14 +63,14 @@ public class StartPage {
         cvcField.$(".input__control").setValue(data);
     }
 
-    public static PayPage payButtonClick() {
-        PayPage payPage = page(PayPage.class);
+    public static StartPage payButtonClick() {
+        StartPage payPage = page(StartPage.class);
         payPage.payButton.click();
         return payPage;
     }
 
-    public static CreditPayPage creditPayButtonClick() {
-        CreditPayPage creditPayPage = page(CreditPayPage.class);
+    public static StartPage creditPayButtonClick() {
+        StartPage creditPayPage = page(StartPage.class);
         creditPayPage.creditButton.click();
         return creditPayPage;
     }

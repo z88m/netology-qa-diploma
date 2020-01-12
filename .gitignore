@@ -2,10 +2,12 @@ Thumbs.db*
 .DS_Store
 HELP.md
 .gradle
+.allure/
 build/
 data/
 node_modules/
 allure-results/
+*.bat
 
 ### STS ###
 .apt_generated
@@ -45,3 +47,4 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+!gradlew.bat

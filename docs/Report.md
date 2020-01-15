@@ -21,7 +21,7 @@
 Создано 36 тест-кейсов:
 * Пройдено успешно: 23
 * Тестов не пройдено: 13
-![Отчет](https://downloader.disk.yandex.ru/preview/494da8f4bdcadcadb0d855e61b21657e52b2fbf835f78013d59a0dcccce4567e/5e1b64b9/41wdvxvw4EeyUloJsk0naliVz3xJiU-8PiqLdT9vomNDxx3EfqEcB5yqlwXbEIuGe_Llo-Jq7dQ-wz39MWZBfw==?uid=0&filename=2020-01-12_17-25-13.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&owner_uid=17445&size=2048x2048)
+![Отчет](https://s81iva.storage.yandex.net/rdisk/b986909a2b5c2d5c8ecbc6d10dac2c5b126c34442b52958ed7641456365a367b/5e1f388c/xePX3pH8N_Pt9xYGvskha64aaBgcQ8i8bHx9r1N-pY2LSGtnyJdNTjYWA-5wDjWsDxzN62I45JjP4GSx_DGbqg==?uid=17445&filename=2020-01-12_17-25-13.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=17445&fsize=14547&hid=c4918cd060b82ed6f4619f24d799582f&media_type=image&tknv=v2&etag=4c218153a0c01af060b0464b4aaf12aa&rtoken=xFkO8MskoM1J&force_default=yes&ycrid=na-ba82fde582d45c8780fa9f7b09b9b0c7-downloader9e&ts=59c2fe4963b00&s=f779908a3f156fbbcae3acb0c10ed512972847acd3518daf095b2902bc4d11ec&pb=U2FsdGVkX1-w3G5NUJwmSnAAmTD6nt5NP8q5bHCdXlnAYF4O73Prm54ivG2YLilgACFrp75C90ntKlYPbMR0mfDVVK9Y_1EHogYuOXx2dxI)
 
 #### Общие рекомендации
 

@@ -30,7 +30,7 @@ public class Tests {
 
     @Test
     @DisplayName("1. Купить. Успешная оплата разрешённой картой")
-    void shouldConfirmPayWithApprovedCard() throws SQLException {
+    void shouldConfirmPayWithApprovedCard() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.continueButtonClick();
@@ -40,7 +40,7 @@ public class Tests {
 
     @Test
     @DisplayName("2. Купить в кредит. Успешная оплата кредитом с разрешённой картой")
-    void shouldConfirmCreditPayWithApprovedCard() throws SQLException {
+    void shouldConfirmCreditPayWithApprovedCard() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.continueButtonClick();
@@ -50,7 +50,7 @@ public class Tests {
 
     @Test
     @DisplayName("3. Купить. Отказ в оплате запрещённой картой")
-    void shouldNotConfirmPayWithDeclinedCard() throws SQLException {
+    void shouldNotConfirmPayWithDeclinedCard() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getDeclinedCard());
         page.continueButtonClick();
@@ -60,7 +60,7 @@ public class Tests {
 
     @Test
     @DisplayName("4. Купить в кредит. Отказ в оплате кредитом с запрещённой картой")
-    void shouldNotConfirmCreditPayWithDeclinedCard() throws SQLException {
+    void shouldNotConfirmCreditPayWithDeclinedCard() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getDeclinedCard());
         page.continueButtonClick();
@@ -70,7 +70,7 @@ public class Tests {
 
     @Test
     @DisplayName("5. Купить. Отказ. Номер карты не существует в системе")
-    void shouldNotConfirmPayWithBadCard() throws SQLException {
+    void shouldNotConfirmPayWithBadCard() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("4444444444444444");
@@ -81,7 +81,7 @@ public class Tests {
 
     @Test
     @DisplayName("6. Купить в кредит. Отказ. Номер карты не существует в системе")
-    void shouldNotConfirmCreditPayWithBadCard() throws SQLException {
+    void shouldNotConfirmCreditPayWithBadCard() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("4444444444444444");
@@ -92,7 +92,7 @@ public class Tests {
 
     @Test
     @DisplayName("7. Купить. Оплата не происходит. Незаполнен номер карты")
-    void shouldNotPayProcessWithoutNumCard() throws SQLException {
+    void shouldNotPayProcessWithoutNumCard() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("");
@@ -105,7 +105,7 @@ public class Tests {
 
     @Test
     @DisplayName("8. Купить. Оплата проходит после исправления номера карты на валидный")
-    void shouldPayProcessAfterRetypeNumCard() throws SQLException {
+    void shouldPayProcessAfterRetypeNumCard() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("444444444444444");
@@ -124,7 +124,7 @@ public class Tests {
 
     @Test
     @DisplayName("9. Купить в кредит. Оплата не происходит. Незаполнен номер карты")
-    void shouldNotCreditPayProcessWithoutNumCard() throws SQLException {
+    void shouldNotCreditPayProcessWithoutNumCard() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("");
@@ -137,7 +137,7 @@ public class Tests {
 
     @Test
     @DisplayName("10. Купить в кредит. Оплата проходит после исправления номера карты на валидный")
-    void shouldCreditPayProcessAfterRetypeNumCard() throws SQLException {
+    void shouldCreditPayProcessAfterRetypeNumCard() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanNumberAndInputNewData("444444444444444");
@@ -155,7 +155,7 @@ public class Tests {
 
     @Test
     @DisplayName("11. Купить. Оплата не происходит. Месяц введён одной цифрой")
-    void shouldNotPayProcessWithShortMonth() throws SQLException {
+    void shouldNotPayProcessWithShortMonth() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("1");
@@ -168,7 +168,7 @@ public class Tests {
 
     @Test
     @DisplayName("12. Купить. Оплата не происходит. Месяц 00")
-    void shouldNotPayProcessWithMonth00() throws SQLException {
+    void shouldNotPayProcessWithMonth00() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("00");
@@ -181,7 +181,7 @@ public class Tests {
 
     @Test
     @DisplayName("13. Купить. Оплата не происходит. Месяц 13")
-    void shouldNotPayProcessWithMonth13() throws SQLException {
+    void shouldNotPayProcessWithMonth13() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
@@ -194,7 +194,7 @@ public class Tests {
 
     @Test
     @DisplayName("14. Купить в кредит. Оплата не происходит. Месяц введён одной цифрой")
-    void shouldNotCreditPayProcessWithShortMonth() throws SQLException {
+    void shouldNotCreditPayProcessWithShortMonth() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("1");
@@ -207,7 +207,7 @@ public class Tests {
 
     @Test
     @DisplayName("15. Купить в кредит. Оплата не происходит. Месяц 00")
-    void shouldNotCreditPayProcessWithMonth00() throws SQLException {
+    void shouldNotCreditPayProcessWithMonth00() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("00");
@@ -220,7 +220,7 @@ public class Tests {
 
     @Test
     @DisplayName("16. Купить в кредит. Оплата не происходит. Месяц 13")
-    void shouldNotCreditPayProcessWithMonth13() throws SQLException {
+    void shouldNotCreditPayProcessWithMonth13() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
@@ -233,7 +233,7 @@ public class Tests {
 
     @Test
     @DisplayName("17. Купить. Оплата не происходит. Год введён одной цифрой")
-    void shouldNotPayProcessWithShortYear() throws SQLException {
+    void shouldNotPayProcessWithShortYear() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanYearAndInputNewData("1");
@@ -246,7 +246,7 @@ public class Tests {
 
     @Test
     @DisplayName("18. Купить в кредит. Оплата не происходит. Год введён одной цифрой")
-    void shouldNotCreditPayProcessWithShortYear() throws SQLException {
+    void shouldNotCreditPayProcessWithShortYear() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanYearAndInputNewData("1");
@@ -259,7 +259,7 @@ public class Tests {
 
     @Test
     @DisplayName("19. Купить. Оплата не происходит. Карта просрочена на месяц")
-    void shouldNotPayProcessWithOverdueMonth() throws SQLException {
+    void shouldNotPayProcessWithOverdueMonth() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(-1));
@@ -273,7 +273,7 @@ public class Tests {
 
     @Test
     @DisplayName("20. Купить в кредит. Оплата не происходит. Карта просрочена на месяц")
-    void shouldNotCreditPayProcessWithOverdueMonth() throws SQLException {
+    void shouldNotCreditPayProcessWithOverdueMonth() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(-1));
@@ -287,7 +287,7 @@ public class Tests {
 
     @Test
     @DisplayName("21. Купить. Оплата не происходит. Карта просрочена на год")
-    void shouldNotPayProcessWithOverdueYear() throws SQLException {
+    void shouldNotPayProcessWithOverdueYear() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
@@ -301,7 +301,7 @@ public class Tests {
 
     @Test
     @DisplayName("22. Купить в кредит. Оплата не происходит. Карта просрочена на год")
-    void shouldNotCreditPayProcessWithOverdueYear() throws SQLException {
+    void shouldNotCreditPayProcessWithOverdueYear() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
@@ -315,7 +315,7 @@ public class Tests {
 
     @Test
     @DisplayName("23. Купить. Оплата не происходит. Срок действия карты больше 5 лет")
-    void shouldNotPayProcessWithYearMore5FromCurrent() throws SQLException {
+    void shouldNotPayProcessWithYearMore5FromCurrent() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
@@ -329,7 +329,7 @@ public class Tests {
 
     @Test
     @DisplayName("24. Купить в кредит. Оплата не происходит. Срок действия карты больше 5 лет")
-    void shouldNotCreditPayProcessWithOverdueYearMore5FromCurrent() throws SQLException {
+    void shouldNotCreditPayProcessWithOverdueYearMore5FromCurrent() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData(TestDataGenerator.getShiftedMMFromCurrent(0));
@@ -343,7 +343,7 @@ public class Tests {
 
     @Test
     @DisplayName("25. Купить. Оплата проходит после исправления месяца")
-    void shouldPayProcessWithCorrectionWrongMonth() throws SQLException {
+    void shouldPayProcessWithCorrectionWrongMonth() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
@@ -361,7 +361,7 @@ public class Tests {
 
     @Test
     @DisplayName("26. Купить в кредит. Оплата проходит после исправления месяца")
-    void shouldCreditPayProcessWithCorrectionWrongMonth() throws SQLException {
+    void shouldCreditPayProcessWithCorrectionWrongMonth() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanMonthAndInputNewData("13");
@@ -379,7 +379,7 @@ public class Tests {
 
     @Test
     @DisplayName("27. Купить. Оплата проходит после исправления года")
-    void shouldPayProcessWithCorrectionWrongYear() throws SQLException {
+    void shouldPayProcessWithCorrectionWrongYear() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanYearAndInputNewData("1");
@@ -397,7 +397,7 @@ public class Tests {
 
     @Test
     @DisplayName("28. Купить в кредит. Оплата проходит после исправления года")
-    void shouldCreditPayProcessWithCorrectionWrongYear() throws SQLException {
+    void shouldCreditPayProcessWithCorrectionWrongYear() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanYearAndInputNewData("1");
@@ -415,7 +415,7 @@ public class Tests {
 
     @Test
     @DisplayName("29. Купить. Оплата не происходит. Имя владельца не заполнено")
-    void shouldNotPayProcessWithoutCardholderName() throws SQLException {
+    void shouldNotPayProcessWithoutCardholderName() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanOwnerAndInputNewData("");
@@ -428,7 +428,7 @@ public class Tests {
 
     @Test
     @DisplayName("30. Купить в кредит. Оплата не происходит. Имя владельца не заполнено")
-    void shouldNotCreditPayProcessWithoutCardholderName() throws SQLException {
+    void shouldNotCreditPayProcessWithoutCardholderName() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanOwnerAndInputNewData("");
@@ -441,7 +441,7 @@ public class Tests {
 
     @Test
     @DisplayName("31. Купить. Оплата происходит после исправления имени владельца")
-    void shouldPayProcessWithCorrectedCardholderName() throws SQLException {
+    void shouldPayProcessWithCorrectedCardholderName() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanOwnerAndInputNewData("Василий @№123");
@@ -459,7 +459,7 @@ public class Tests {
 
     @Test
     @DisplayName("32. Купить в кредит. Купить. Оплата происходит после исправления имени владельца")
-    void shouldCreditPayProcessWithCorrectedCardholderName() throws SQLException {
+    void shouldCreditPayProcessWithCorrectedCardholderName() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanOwnerAndInputNewData("Василий @№123");
@@ -477,7 +477,7 @@ public class Tests {
 
     @Test
     @DisplayName("33. Купить. Оплата не происходит. CVC/CVV не заполнено")
-    void shouldNotPayProcessWithoutCVC() throws SQLException {
+    void shouldNotPayProcessWithoutCVC() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanCvcAndInputNewData("");
@@ -490,7 +490,7 @@ public class Tests {
 
     @Test
     @DisplayName("34. Купить в кредит. Оплата не происходит. CVC/CVV не заполнено")
-    void shouldNotCreditPayProcessWithoutCVC() throws SQLException {
+    void shouldNotCreditPayProcessWithoutCVC() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanCvcAndInputNewData("");
@@ -503,7 +503,7 @@ public class Tests {
 
     @Test
     @DisplayName("35. Купить. Оплата происходит после исправления CVC/CVV")
-    void shouldPayProcessWithCorrectedCvc() throws SQLException {
+    void shouldPayProcessWithCorrectedCvc() {
         StartPage page = StartPage.payButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanCvcAndInputNewData("42");
@@ -521,7 +521,7 @@ public class Tests {
 
     @Test
     @DisplayName("36. Купить в кредит. Оплата происходит после исправления CVC/CVV")
-    void shouldCreditPayProcessWithCorrectedCvc() throws SQLException {
+    void shouldCreditPayProcessWithCorrectedCvc() {
         StartPage page = StartPage.creditPayButtonClick();
         page.inputData(TestDataGenerator.getApprovedCard());
         page.cleanCvcAndInputNewData("42");

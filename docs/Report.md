@@ -18,10 +18,10 @@
 
 #### Количество тест-кейсов
 
-Создано 36 тест-кейсов:
-* Пройдено успешно: 23
-* Тестов не пройдено: 13
-![Отчет](https://s81iva.storage.yandex.net/rdisk/b986909a2b5c2d5c8ecbc6d10dac2c5b126c34442b52958ed7641456365a367b/5e1f388c/xePX3pH8N_Pt9xYGvskha64aaBgcQ8i8bHx9r1N-pY2LSGtnyJdNTjYWA-5wDjWsDxzN62I45JjP4GSx_DGbqg==?uid=17445&filename=2020-01-12_17-25-13.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=17445&fsize=14547&hid=c4918cd060b82ed6f4619f24d799582f&media_type=image&tknv=v2&etag=4c218153a0c01af060b0464b4aaf12aa&rtoken=xFkO8MskoM1J&force_default=yes&ycrid=na-ba82fde582d45c8780fa9f7b09b9b0c7-downloader9e&ts=59c2fe4963b00&s=f779908a3f156fbbcae3acb0c10ed512972847acd3518daf095b2902bc4d11ec&pb=U2FsdGVkX1-w3G5NUJwmSnAAmTD6nt5NP8q5bHCdXlnAYF4O73Prm54ivG2YLilgACFrp75C90ntKlYPbMR0mfDVVK9Y_1EHogYuOXx2dxI)
+Создано 32 тест-кейсов:
+* Пройдено успешно: 12
+* Тестов не пройдено: 20
+![Отчет](https://s167iva.storage.yandex.net/rdisk/21e1757f0725ca5f15cb32518816fcd513a2228095fa85ff0e0c10bae4b0e497/5e2e05eb/xePX3pH8N_Pt9xYGvskha2osU9LXkXX0ya2BQUVD9N3TBvC0oTbkFFrn2kTHayvbpFcPzI1sH7zDmw_DOF1wLw==?uid=17445&filename=2020-01-26_19-22-23.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=17445&fsize=16216&hid=b049ef18b3383eae5324a9f822b9edbb&media_type=image&tknv=v2&etag=435dc351db366458d8e43cd9c41db673&rtoken=ooB87i1gAG6X&force_default=yes&ycrid=na-06ce0b9bf750a6f312f4069ffc7c1b51-downloader3h&ts=59d11c1cd10c0&s=bfc731fa4b1b23edaef8b3a3d1139faaa37db0736f04df7f2a4d91aca6f87a5a&pb=U2FsdGVkX1_L2LekgeftV4xc0JbUiWE17urpPaViBi7ux5mcmAdsZ8DSYMrIRORvsCHAt8k6kn9yQ3pvkaUMOgm5B2sHepEjru7RqbNNnWE)
 
 #### Общие рекомендации
 

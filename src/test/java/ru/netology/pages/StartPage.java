@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class StartPage {
 
-    protected String host = "http://localhost:8080";
+    protected String host = System.getProperty("test.host", "http://localhost:8080");
     protected SelenideElement header = $(By.cssSelector("h3"));
     protected SelenideElement payButton = $(byText("Купить")).parent().parent();
     protected SelenideElement creditButton = $(byText("Купить в кредит")).parent().parent();

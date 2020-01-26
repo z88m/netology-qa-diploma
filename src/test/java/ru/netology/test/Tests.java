@@ -16,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Tests {
 
     @BeforeAll
-    static void setUpAll() {
+    static void setUpAll() throws SQLException {
+        TestSQLHelper.cleanTables();
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 

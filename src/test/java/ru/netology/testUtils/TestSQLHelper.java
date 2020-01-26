@@ -5,11 +5,15 @@ import java.sql.*;
 
 public class TestSQLHelper {
 
-    private static final String dbUrl = System.getProperty("db.url"); //для запуска из консоли
-    //private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/app"; //для запуска из Idea
+    private static String dbUrl = System.getProperty("db.url"); //для запуска из консоли
+    private static String dbUser = System.getProperty("db.user", "app");
+    private static String dbPass = System.getProperty("db.pass","pass");
+
     //private static final String dbUrl = "jdbc:postgresql://127.0.0.1:5432/app"; //для запуска из Idea
-    private static final String dbUser = System.getProperty("db.user", "app");
-    private static final String dbPass = System.getProperty("db.pass","pass");
+    //private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/app"; //для запуска из Idea
+    //private static final String dbUser = "app";
+    //private static final String dbPass = "pass";
+
     @Getter private static final String payTable = "payment_entity";
     @Getter private static final String creditTable = "credit_request_entity";
 

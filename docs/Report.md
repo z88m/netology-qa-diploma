@@ -18,9 +18,10 @@
 
 #### Количество тест-кейсов
 
-Создано 32 тест-кейсов:
+Создано 32 тест-кейса:
 * Пройдено успешно: 12
 * Тестов не пройдено: 20
+
 ![Отчет](https://s167iva.storage.yandex.net/rdisk/21e1757f0725ca5f15cb32518816fcd513a2228095fa85ff0e0c10bae4b0e497/5e2e05eb/xePX3pH8N_Pt9xYGvskha2osU9LXkXX0ya2BQUVD9N3TBvC0oTbkFFrn2kTHayvbpFcPzI1sH7zDmw_DOF1wLw==?uid=17445&filename=2020-01-26_19-22-23.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=17445&fsize=16216&hid=b049ef18b3383eae5324a9f822b9edbb&media_type=image&tknv=v2&etag=435dc351db366458d8e43cd9c41db673&rtoken=ooB87i1gAG6X&force_default=yes&ycrid=na-06ce0b9bf750a6f312f4069ffc7c1b51-downloader3h&ts=59d11c1cd10c0&s=bfc731fa4b1b23edaef8b3a3d1139faaa37db0736f04df7f2a4d91aca6f87a5a&pb=U2FsdGVkX1_L2LekgeftV4xc0JbUiWE17urpPaViBi7ux5mcmAdsZ8DSYMrIRORvsCHAt8k6kn9yQ3pvkaUMOgm5B2sHepEjru7RqbNNnWE)
 
 #### Общие рекомендации

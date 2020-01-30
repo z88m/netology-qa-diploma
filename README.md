@@ -22,21 +22,21 @@ _(Если ваша система не воспринимает адрес 127.
 1. **ИЛИ** Запуск SUT с поддержкой Postgres
    * ```java -Dspring.datasource.url=jdbc:postgresql://127.0.0.1:5432/app -jar artifacts/aqa-shop.jar```
 1. Запуск тестов с MySQL
-   * ```gradlew -Ddb.url=jdbc:mysql://127.0.0.1:3306/app clean test allureReport```
+   * ```gradlew -Ddb.url=jdbc:mysql://127.0.0.1:3306/app clean test```
 1. **ИЛИ** Запуск тестов с Postgres
-   * ```gradlew -Ddb.url=jdbc:postgresql://127.0.0.1:5432/app clean test allureReport```
+   * ```gradlew -Ddb.url=jdbc:postgresql://127.0.0.1:5432/app clean test```
 
 Для запуска тестов из **Idea** требуется исправить адрес базы данных в файле *TestSQLHelper.java*
 
 #### Отчёт Allure
-Отчёт по тестам генерируется командой ```gradlew allureServe```
+Для генерации отчёта по тестам нужно выполнить команду ```gradlew allureReport allureServe```
 
 #### Окончание тестов и остановка контейнеров
 
    * Прервать выполнение SUT по Ctrl+C (или закрытием окна терминала)
    * Остановить контейнеры командой ```docker-compose down```
 
-#### Опциональные параметры запуска gradles
+#### Опциональные параметры запуска gradlew
 
    *  ```db.url=jdbc:mysql://127.0.0.1:3306/app``` или ```db.url=jdbc:postgresql://127.0.0.1:5432/app``` -- адрес и тип тестовой базы данных. Должен совпадать с адресом базы SUT. Обязательный.
    *  ```db.user``` -- имя пользователя базы данных. Необязательный. По-умолчанию 'app'

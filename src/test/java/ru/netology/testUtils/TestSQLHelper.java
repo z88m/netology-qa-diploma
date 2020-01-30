@@ -6,8 +6,8 @@ import java.sql.*;
 public class TestSQLHelper {
 
     private static String dbUrl = System.getProperty("db.url"); //для запуска из консоли
-    private static String dbUser = System.getProperty("db.user", "app");
-    private static String dbPass = System.getProperty("db.pass","pass");
+    private static String dbUser = System.getProperty("db.user");
+    private static String dbPass = System.getProperty("db.pass");
 
     //private static final String dbUrl = "jdbc:postgresql://127.0.0.1:5432/app"; //для запуска из Idea
     //private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/app"; //для запуска из Idea
